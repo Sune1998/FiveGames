@@ -1,12 +1,13 @@
 import turtle
-import os
+from _tkinter import *
+
 vn = turtle.Screen()
 vn.title("pong")
 vn.bgcolor("black")
 vn.setup(width=800, height=600)
 vn.tracer(0)
 
-#score
+# score
 
 score_a = 0
 score_b = 0
@@ -41,13 +42,11 @@ ball.dy = 2
 # pen
 pen = turtle.Turtle
 pen.speed(0)
-pen.color("white")
+pen.color('white')
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player A : 0 Player B : 0" , align="center", font=("Courier", 24, "normal"))
-
-
+pen.write("Player A : 0 Player B : 0", align="center", font=("Courier", 24, "normal"))
 
 
 # Function
@@ -104,7 +103,8 @@ while True:
             ball.dx *= -1
             score_a += 1
             pen.clear()
-            pen.write("Player A : {} Player B : {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+            pen.write("Player A : {} Player B : {}".format(score_a, score_b), align="center",
+                      font=("Courier", 24, "normal"))
 
             if ball.xcor() < -390:
                 ball.goto(0, 0)
@@ -119,7 +119,5 @@ while True:
                 ball.dx *= -1
 
             if 340 < ball.xcor() < 350 and (paddle_a.ycor() + 40 > ball.ycor() > paddle_a.ycor() - 50):
-                    ball.setx(-340)
-                    ball.dx *= -1
-
-
+                ball.setx(-340)
+                ball.dx *= -1
