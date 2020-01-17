@@ -1,5 +1,5 @@
 import turtle
-
+import os
 vn = turtle.Screen()
 vn.title("pong")
 vn.bgcolor("black")
@@ -114,11 +114,11 @@ while True:
                 pen.write("Player A : {} Player B : {}".format(score_a, score_b), align="center",
                           font=("Courier", 24, "normal"))
 
-            if 340 < ball.xcor() < 350 and (paddle_b.ycor() + 40 > ball.ycor() > paddle_b.ycor() - 50)
+            if 340 < ball.xcor() < 350 and (paddle_b.ycor() + 40 > ball.ycor() > paddle_b.ycor() - 50):
                 ball.setx(340)
                 ball.dx *= -1
 
-            if 340 < ball.xcor() < 350 and (paddle_a.ycor() + 40 > ball.ycor() > paddle_a.ycor() - 50)
+            if 340 < ball.xcor() < 350 and (paddle_a.ycor() + 40 > ball.ycor() > paddle_a.ycor() - 50):
                     ball.setx(-340)
                     ball.dx *= -1
 
