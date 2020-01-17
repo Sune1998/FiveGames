@@ -107,6 +107,7 @@ while True:
             # pen.clear()
             # pen.write("Player A : {} Player B : {}".format(score_a, score_b), align="center",
             # font=("Courier", 24, "normal"))
+            # help
 
             if ball.xcor() < -390:
                 ball.goto(0, 0)
