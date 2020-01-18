@@ -24,13 +24,15 @@ paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
 paddle_b.goto(350, 0)
 
-# paddle a
+# ball
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
+ball.dx = 0.2
+ball.dy = 0.2
 
 
 # Function
@@ -69,3 +71,32 @@ wn.onkeypress(paddle_b_down, "Down")
 # main game loop
 while True:
     wn.update()
+
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
+    # Border checking
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+
+    elif ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+
+    if ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+
+    if ball.xcor() < -390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+
+        # paddle and ball
+        if ball.xcor() < -340 and paddle_a.ycor() + 50 > ball.ycor() > paddle_a.ycor() - 50:
+            ball.setx(-340)
+            ball.dx *= -1
+
+    elif ball.xcor() > 340 and paddle_b.ycor() + 40 > ball.ycor() > paddle_b.ycor() - 40:
+        ball.setx(340)
+        ball.dx *= -1
