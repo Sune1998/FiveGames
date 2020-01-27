@@ -119,4 +119,46 @@ class Snake(object):
         self.body[-1].dirny = dy
 
     def draw(self, surface):
+        for i, c in enumerate(self.body):
+            if i == 0:
+                c.draw(surface, True)
+            else:
+                c.draw(surface)
+
+
+def drawgrid(w, rows, surface):
+    sizebtwn = w // rows
+
+    x = 0
+    y = 0
+    for l in range(rows):
+        x = x + sizebtwn
+        y = y + sizebtwn
+
+        pygame.draw.line(surface, (255, 255, 255), (x, 0), (x, w))
+        pygame.draw.line(surface, (255, 255, 255), (0, x), (w, x)),
+
+
+def redrawwindow(surface):
+    global rows, width, s, snack
+    surface.fill((0, 0, 0))
+    s.draw(surface)
+    snack.draw(surface)
+    drawgrid(width, rows, surface)
+    pygame.display.update()
+
+
+def randomSnack(rows, item):
+    positions = item.body
+
+    while True:
+        x = random.randrange(rows)
+        y = random.randrange(rows)
+        if len(list(filter(lambda z: z.pos == (x, y), positions))) > 0:
+            continue
+        else:
+            break
+
+    return x, y
+
 
