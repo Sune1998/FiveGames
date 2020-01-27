@@ -1,3 +1,5 @@
+from logging import root
+
 import pygame
 import math
 import random
@@ -162,3 +164,42 @@ def randomSnack(rows, item):
     return x, y
 
 
+def massage_box(subject, content):
+    try:
+        root.destroy()
+    except:
+        pass
+
+
+def main():
+    global width, rows, s, snack
+    width = 500
+    rows = 20
+    win = pygame.display.set_mode((width, width))
+    s = Snake((255, 0, 0), (10, 10))
+    snack = Cube(randomSnack(rows, s), color=(0, 255, 0))
+    flag = True
+
+    clock = pygame.time.Clock()
+
+    while flag:
+        pygame.time.delay(50)
+        clock.tick(10)
+        s.move()
+        if s.body[0].pos == snack.pos:
+            s.addcube()
+            snack = Cube(randomSnack(rows, s), color=(0, 255, 0))
+
+        for x in range(len(s.body)):
+            if s.body[x].pos in list(map(lambda z: z.pos, s.body[x + 1:])):
+                print('Score:', len(s.body))
+                massage_box('you lost, play again')
+                s.reset((10, 10))
+                break
+
+        redrawwindow(win)
+
+    pass
+
+
+main()
