@@ -193,7 +193,7 @@ def main():
         for x in range(len(s.body)):
             if s.body[x].pos in list(map(lambda z: z.pos, s.body[x + 1:])):
                 print('Score:', len(s.body))
-                massage_box('you lost, play again')
+                messagebox('you lost, play again')
                 s.reset((10, 10))
                 break
 
