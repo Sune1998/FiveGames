@@ -6,18 +6,19 @@ Dette er 5 spill skrevet i python. der er tale om 4 klassiske spill og et multip
 
 Pong går ud på at få skubbet den hvide bold bag din modstanders paddle. Den med Flest poits vinder
 
-// indsæt billed her.
+![pong](https://github.com/Sune1998/FiveGames/blob/master/pic/Selection_002.png)
 
 # Snake
 
 Snake går ud på at få gjort sin Slange så stor som mulig. Spillet slutter hvis man støder ind i sig selv.
 
-// indsæt billed her
+![snake](https://github.com/Sune1998/FiveGames/blob/master/pic/Selection_003.png)
 
 # Connect 4
 
 Connect 4 går ud på at få fire cirkler på stribe, den der gør det først vinder spillet.
 
+![connct](https://github.com/Sune1998/FiveGames/blob/master/pic/Selection_004.png)
 
 # Tetris
 
