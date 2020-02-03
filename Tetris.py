@@ -260,7 +260,7 @@ def draw_window(surface):
     surface.blit(label, (top_left_x + play_width / 2 - label.get_width() / 2), 30)
 
     font = pygame.font.SysFont('comicsans', 30)
-    label = font.render('Score:', + str(score), 1, (255, 255, 255))
+    label = font.render('Score:', + str(score), 1, (255, 255, 255)) # help pls
 
     sx = top_left_x + play_width + 50
     sy = top_left_y + play_height / 2 - 100
